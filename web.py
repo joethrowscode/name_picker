@@ -4,6 +4,7 @@ import random
 
 names = functions.get_names()
 
+result = None
 
 def add_name():
     name_added = st.session_state["new_name"] + '\n'
@@ -14,9 +15,12 @@ def add_name():
 st.title("Name Picker")
 st.subheader("Input values and randomly choose one of them.")
 
-st.button(label="Pick a Name", key="picker_button", on_click="name_picker()")
+st.button(label="Pick a Name", key="picker_button")
 
-st.text(body="name_picker()")
+if st.session_state.picker_button:
+    result = functions.name_picker()
+
+st.text(result)
 
 st.write("Tick the checkbox to remove a value.")
 
