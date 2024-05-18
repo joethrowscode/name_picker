@@ -13,9 +13,4 @@ def write_names(names_arg, filepath=FILEPATH):
         file_local.writelines(names_arg)
 
 
-def name_picker(list="names"):
-    picker_lower = 0
-    picker_higher = len(list)
-    name_result = random.randint(picker_lower, picker_higher)
-    picked_name = list[name_result]
-    return picked_name
+

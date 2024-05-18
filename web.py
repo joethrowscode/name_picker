@@ -12,13 +12,21 @@ def add_name():
     functions.write_names(names)
 
 
+def name_picker(name_list=names):
+    picker_lower = 0
+    picker_higher = len(name_list)
+    name_result = random.randrange(picker_lower, picker_higher)
+    picked_name = name_list[name_result]
+    return picked_name
+
+
 st.title("Name Picker")
 st.subheader("Input values and randomly choose one of them.")
 
 st.button(label="Pick a Name", key="picker_button")
 
 if st.session_state.picker_button:
-    result = functions.name_picker()
+    result = name_picker()
 
 st.text(result)
 
