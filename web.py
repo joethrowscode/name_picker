@@ -12,7 +12,13 @@ def add_name():
 
 
 st.title("Name Picker")
-st.subheader("Input names and randomly choose one of them.")
+st.subheader("Input values and randomly choose one of them.")
+
+st.button(label="Pick a Name", key="picker_button", on_click="name_picker()")
+
+st.text(body="name_picker()")
+
+st.write("Tick the checkbox to remove a value.")
 
 st.text_input(label="Enter a name and press return/enter: ",
               placeholder="Add new name here.",
@@ -26,5 +32,3 @@ for index, box_name in enumerate(names):
         del st.session_state[box_name]
         st.rerun()
 
-
-print(names)
